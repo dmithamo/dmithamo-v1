@@ -14,13 +14,14 @@
     "gatsby-source-filesystem": "^2.3.30",
     "gatsby-transformer-sharp": "^2.5.15",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "eslint": "^7.10.0",
     "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.21.2",
@@ -41,14 +42,14 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint:all": "eslint --fix \"src/**/*.{js, jsx}\""
+    "lint:all": "eslint --fix \"src/**/*.{js,jsx}\""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/dmithamo/dmithamo-v1"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/dmithamo/dmithamo-v1/issues"
   },
   "husky": {
     "hooks": {
