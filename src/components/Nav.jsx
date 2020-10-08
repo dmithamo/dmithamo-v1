@@ -6,21 +6,16 @@ import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
-const NAV_LINKS = [
+export const NAV_LINKS = [
+  { path: '/', name: 'home', icon: 'home', isCTA: false },
+  { path: '/about', name: 'about', icon: 'info-circle', isCTA: false },
+  { path: '/projects', name: 'projects', icon: 'code-branch', isCTA: false },
+  { path: '/resume', name: 'resume`', icon: 'file-pdf', isCTA: false },
   {
-    name: 'about',
-    path: '/about',
-    isCTA: false,
-  },
-  {
-    name: 'projects',
-    path: '/projects',
-    isCTA: false,
-  },
-  {
-    name: 'resume',
-    path: '/resume',
-    isCTA: false,
+    path: '/contacts',
+    name: 'get in touch',
+    icon: 'address-card',
+    isCTA: true,
   },
 ];
 
@@ -42,7 +37,7 @@ export default function Nav() {
         }
       `}
     >
-      {NAV_LINKS.map(link => (
+      {NAV_LINKS.filter(n => !n.isCTA && n.name !== 'home').map(link => (
         <NavItem key={link.path} isCTA={link.isCTA} to={link.path}>
           {link.name}
         </NavItem>

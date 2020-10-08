@@ -2,9 +2,10 @@
 import React from 'react';
 import { jsx, css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from './Button';
+import { NAV_LINKS } from './Nav';
 
 export default function FullPageMenu({ onClose }) {
   return (
@@ -21,6 +22,7 @@ export default function FullPageMenu({ onClose }) {
         justify-content: space-between;
         align-items: center;
         padding: 15em 0;
+        background-color: var(--darkThemeBG);
 
         button {
           font-size: 3em;
@@ -32,10 +34,6 @@ export default function FullPageMenu({ onClose }) {
             opacity: 1;
             color: var(--white) !important;
           }
-
-          svg {
-            margin: 0 0.5em 0 0;
-          }
         }
 
         div.container {
@@ -44,45 +42,53 @@ export default function FullPageMenu({ onClose }) {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-        }
-        background-color: var(--darkThemeBG);
 
-        a {
-          font-family: var(--primaryFontBold);
-          font-size: 1.5em;
-          padding: 0.5em 2em;
-          width: 100%;
-          margin: auto;
-          color: inherit;
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          border-radius: 10px;
+          button.nav-link {
+            font-family: var(--primaryFontBold);
+            font-size: 1.5em;
+            margin: 0.5em 0;
+            padding: 0.5em 0;
+            width: 250px;
+            display: flex;
+            justify-content: center !important;
+            align-items: center !important;
 
-          &:hover {
-            color: var(--darkThemeAccents);
-            background-color: var(--black);
+            span.icon {
+              width: 20%;
+            }
+
+            span:last-of-type {
+              flex-grow: 1;
+            }
+
+            &:hover {
+              color: var(--darkThemeAccents) !important;
+            }
           }
         }
       `}
     >
-      <Button category="link" onClick={onClose}>
-        <FontAwesomeIcon icon={['far', 'times-circle']} />
-        <span>Close</span>
+      <Button classes="close-btn" category="link" onClick={onClose}>
+        <span className="icon">
+          <FontAwesomeIcon icon={['far', 'times-circle']} />
+        </span>
       </Button>
       <div className="container">
-        {[
-          { path: '/', value: 'home', icon: 'home' },
-          { path: '/about', value: 'about', icon: 'info-circle' },
-          { path: '/projects', value: 'projects', icon: 'code-branch' },
-          { path: '/resume', value: 'resume', icon: 'file-pdf' },
-          { path: '/contacts', value: 'get in touch', icon: 'address-card' },
-        ].map(link => (
-          <Link to={link.path}>
-            <span>{link.value}</span>
-            <FontAwesomeIcon icon={link.icon} />
-          </Link>
+        {NAV_LINKS.map(link => (
+          <Button
+            key={link.path}
+            classes="nav-link"
+            category="link"
+            onClick={() => {
+              navigate(link.path);
+              onClose();
+            }}
+          >
+            <span className="icon">
+              <FontAwesomeIcon icon={link.icon} />
+            </span>
+            <span>{link.name}</span>
+          </Button>
         ))}
       </div>
     </div>

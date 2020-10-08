@@ -36,7 +36,7 @@ export default function DefaultLayout({ children, pageTitle }) {
   return (
     <>
       <Helmet titleTemplate="%s | @dmithamo">
-        <html lnag="en"></html>
+        <html lang="en"></html>
         <title>{pageTitle}</title>
         <meta name="description" />
         <script src="../../utils/pace/pace.js"></script>
