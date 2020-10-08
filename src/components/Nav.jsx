@@ -36,6 +36,10 @@ export default function Nav() {
         width: 20%;
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 1200px) {
+          width: 40%;
+        }
       `}
     >
       {NAV_LINKS.map(link => (

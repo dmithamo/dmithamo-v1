@@ -7,7 +7,31 @@ import { jsx, css } from '@emotion/core';
 import Header from '../Header';
 import Footer from '../Footer';
 import '../../css/index.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import {
+  faBars,
+  faHome,
+  faCodeBranch,
+  faAddressCard,
+  faFilePdf,
+  faInfoCircle,
+} from '@fortawesome/free-solid-svg-icons';
 
+// Add font awesome icons here
+(() => {
+  library.add(
+    fab,
+    faBars,
+    faTimesCircle,
+    faHome,
+    faCodeBranch,
+    faAddressCard,
+    faInfoCircle,
+    faFilePdf
+  );
+})();
 export default function DefaultLayout({ children, pageTitle }) {
   return (
     <>

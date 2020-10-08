@@ -61,7 +61,13 @@ Button.defaultProps = {
 };
 
 const StyledButton = styled.span`
+  width: fit-content;
   button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     font-family: inherit;
     padding: 0.85em 1.1em;
     font-weight: bolder;
@@ -69,17 +75,8 @@ const StyledButton = styled.span`
     border-radius: 5px;
     cursor: pointer;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
     svg {
       font-size: 1.3em;
-    }
-
-    :hover {
-      color: var(--black);
-      background-color: var(--darkThemeAccents);
     }
   }
 
@@ -98,12 +95,23 @@ const StyledButton = styled.span`
     color: var(--black);
     background-color: var(--grey);
     border: none;
+
+    :hover {
+      background-color: var(--black);
+      color: var(--darkThemeAccents);
+    }
   }
 
   button.outline {
     background: none;
     color: var(--white);
     border: 1px solid var(--white);
+
+    :hover {
+      background-color: var(--black);
+      color: var(--darkThemeAccents);
+      border: 1px solid var(--black);
+    }
   }
 
   button.danger {

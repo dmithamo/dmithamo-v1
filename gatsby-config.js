@@ -4,5 +4,5 @@ module.exports = {
     description: `Homepage of dmithamo`,
     author: `@dmithamo`,
   },
-  plugins: [`gatsby-plugin-react-helmet`],
+  plugins: [`gatsby-plugin-react-helmet`, `gatsby-plugin-fontawesome-css`],
 };
