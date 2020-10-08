@@ -26,6 +26,7 @@
   --grey: #ccc;
   --red: #ff0000;
   --darkThemeText: #eeffff;
+  --darkThemeText: var(--grey);
   --darkThemeBG: #263238;
   --darkThemeAccents: #4ef0e0;
   /* --darkThemeAccents: #3fc4ff; */
