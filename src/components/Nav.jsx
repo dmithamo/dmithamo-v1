@@ -6,21 +6,37 @@ import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
+const NAV_LINKS = [
+  {
+    name: 'about me',
+    path: '/aboutMe',
+    isCTA: false,
+  },
+  {
+    name: 'projects',
+    path: '/projects',
+    isCTA: false,
+  },
+  {
+    name: 'resume',
+    path: '/resume',
+    isCTA: false,
+  },
+  {
+    name: 'get in touch',
+    path: '/contacts',
+    isCTA: true,
+  },
+];
+
 export default function Nav() {
   return (
-    <nav
-      css={css`
-        span:last-of-type {
-          margin-right: 0;
-        }
-      `}
-    >
-      <NavItem to="/about-me">about me</NavItem>
-      <NavItem to="/projects">projects</NavItem>
-      <NavItem to="/resume">resume</NavItem>
-      <NavItem isCTA to="/contacts">
-        get in touch
-      </NavItem>
+    <nav css={css``}>
+      {NAV_LINKS.map(link => (
+        <NavItem isCTA={link.isCTA} to={link.path}>
+          {link.name}
+        </NavItem>
+      ))}
     </nav>
   );
 }
@@ -37,7 +53,7 @@ const StyledNavlink = styled(Link)`
   margin-right: 1em;
   border: ${props => (props.isCTA ? '1px solid var(--darkThemeAccents)' : '')};
   padding: ${props => (props.isCTA ? '0.75em' : '')};
-  border-radius: 8px;
+  border-radius: 3px;
 
   &:hover {
     background-color: ${props =>

@@ -20,16 +20,22 @@ export default function DefaultLayout({ children, pageTitle }) {
         <link href="../../utils/pace/theme.css" rel="stylesheet"></link>
       </Helmet>
       <div
+        className="root-container"
         css={css`
-          width: 90%;
-          margin: 0 auto;
-          padding: 0 1em;
+          min-height: 100vh;
           position: relative;
-          min-height: 105vh;
         `}
       >
         <Header />
-        <section css={css``}>{children}</section>
+        <section
+          css={css`
+            width: 90%;
+            margin: 0 auto;
+            padding: 0 1em;
+          `}
+        >
+          {children}
+        </section>
         <Footer />
       </div>
     </>

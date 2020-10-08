@@ -16,7 +16,7 @@ export default function NotFoundPage() {
           align-items: center;
         `}
       >
-        You must be lost.&nbsp;&nbsp;
+        You must be lost.&nbsp;
         <Link
           css={css`
             color: var(--darkThemeAccents);

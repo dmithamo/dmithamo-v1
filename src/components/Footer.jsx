@@ -18,7 +18,7 @@ export default function Footer() {
     >
       <span
         css={css`
-          opacity: 0.5;
+          opacity: 0.2;
           &:hover {
             opacity: 1;
           }
@@ -30,7 +30,7 @@ export default function Footer() {
           rel="noreferrer external noopener"
           css={css`
             text-decoration: none;
-            color: inherit;
+            color: var(--darkThemeAccents);
           `}
         >
           &copy;{new Date().getFullYear()} dmithamo

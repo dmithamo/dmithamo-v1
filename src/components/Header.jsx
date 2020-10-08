@@ -9,11 +9,12 @@ export default function Header() {
   return (
     <header
       css={css`
-        padding: 1em 0;
+        padding: 1.5em 3em;
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        box-shadow: var(--modalShadow);
       `}
     >
       <Logo />
