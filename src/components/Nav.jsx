@@ -57,6 +57,7 @@ const StyledNavlink = styled(Link)`
   text-decoration: none;
   color: inherit;
   padding-bottom: 0.2em;
+  border-bottom: 4px solid var(--darkThemeBG);
 `;
 
 NavItem.propTypes = {

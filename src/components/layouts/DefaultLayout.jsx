@@ -7,8 +7,6 @@ import { jsx, css } from '@emotion/core';
 import Header from '../Header';
 import Footer from '../Footer';
 import '../../css/index.css';
-// import '../../utils/pace/pace';
-// import '../../utils/pace/pace-theme.css';
 
 export default function DefaultLayout({ children, pageTitle }) {
   return (
