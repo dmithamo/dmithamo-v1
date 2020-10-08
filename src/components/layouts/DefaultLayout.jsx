@@ -6,6 +6,9 @@ import { Helmet } from 'react-helmet';
 import { jsx, css } from '@emotion/core';
 import Header from '../Header';
 import Footer from '../Footer';
+import '../../css/index.css';
+import '../../utils/pace/pace';
+import '../../utils/pace/pace-theme.css';
 
 export default function DefaultLayout({ children, pageTitle }) {
   return (
@@ -13,48 +16,16 @@ export default function DefaultLayout({ children, pageTitle }) {
       <Helmet titleTemplate="%s | @dmithamo">
         <title>{pageTitle}</title>
         <meta name="description" />
-        <style>{`
-          :root {
-            --primary-text-color: #000;
-            --primary-bg-color: #eee;
-            --primary-accent-color: #000;
-            --primary-font: georgia, serif, sans-serif;
-          }
-          html {
-            font: 100%/1em var(--primary-font);
-          }
-
-          body {
-            font-family: var(--primary-font);
-            color: var(--primary-color);
-            background: var(--primary-bg-color);
-            margin: 0;
-            width: 100%;
-            box-sizing: border-box;
-          }
-
-          p,h1,h2,h3,h4,h5,h6{
-            margin: 0 0 1em 0;
-          }
-
-          ul {
-            margin: 0;
-          }
-
-          * {
-            box-sizing: border-box;
-
-          }
-        `}</style>
+        <script src="../../utils/pace/pace.js"></script>
+        <link href="../../utils/pace/theme.css" rel="stylesheet"></link>
       </Helmet>
       <div
         css={css`
-          color: var(--primary-text-color);
           width: 90%;
           margin: 0 auto;
-          padding: 1em;
+          padding: 0 1em;
           position: relative;
-          min-height: 100vh;
+          min-height: 105vh;
         `}
       >
         <Header />

@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { jsx, css } from '@emotion/core';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 export default function Nav() {
@@ -25,27 +26,28 @@ export default function Nav() {
 }
 
 export const NavItem = ({ isCTA, to, children }) => (
-  <span
-    css={css`
-      margin-right: 1em;
-      border: ${isCTA ? '1px solid var(--primary-accent-color)' : ''};
-      padding: ${isCTA ? '0.80em' : ''};
-      border-radius: 10px;
-
-      a {
-        color: var(--primary-text-color);
-        text-decoration: none;
-
-        &:hover,
-        &:active {
-          text-decoration: ${isCTA ? 'none' : 'underline'};
-        }
-      }
-    `}
-  >
-    <Link to={to}>{children}</Link>
-  </span>
+  <StyledNavlink isCTA={isCTA} to={to}>
+    {children}
+  </StyledNavlink>
 );
+
+const StyledNavlink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  margin-right: 1em;
+  border: ${props => (props.isCTA ? '1px solid var(--darkThemeAccents)' : '')};
+  padding: ${props => (props.isCTA ? '0.75em' : '')};
+  border-radius: 8px;
+
+  &:hover {
+    background-color: ${props =>
+      props.isCTA ? 'var(--darkThemeAccents)' : 'none'};
+
+    color: ${props => (props.isCTA ? 'var(--black)' : 'inherit')};
+
+    text-decoration: ${props => (props.isCTA ? 'none' : 'underline')};
+  }
+`;
 
 NavItem.propTypes = {
   isCTA: PropTypes.bool,

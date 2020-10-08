@@ -1,0 +1,46 @@
+@import './typography.css';
+
+:root {
+  /* colors */
+  --black: #000;
+  --white: #fff;
+  --darkThemeText: #ffffff;
+  --darkThemeBG: #000000;
+  --darkThemeAccents: rgb(16, 255, 255);
+  --lightThemeText: #000000;
+  --lightThemeBG: #ffffff;
+  --lightThemeAccents: rgb(2, 182, 32);
+
+  /* fonts */
+  --primaryFont: 'Poppins Regular', sans-serif;
+  --primaryFontThin: 'Poppins Thin', sans-serif;
+  --primaryFontBold: 'Poppins Bold', sans-serif;
+}
+
+body {
+  font-family: var(--primaryFont);
+  background-color: var(--darkThemeBG);
+  color: var(--darkThemeText);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  font-family: var(--primaryFontBold);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
+  margin: 0;
+  margin-bottom: 1em;
+}

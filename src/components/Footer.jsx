@@ -13,6 +13,7 @@ export default function Footer() {
         position: absolute;
         bottom: 0;
         padding: 0.2em;
+        font-family: var(-primaryFontThin);
       `}
     >
       <span
@@ -23,7 +24,17 @@ export default function Footer() {
           }
         `}
       >
-        &copy;{new Date().getFullYear()} dmithamo
+        <a
+          href="https://github.com/dmithamo"
+          target="_blank"
+          rel="noreferrer external noopener"
+          css={css`
+            text-decoration: none;
+            color: inherit;
+          `}
+        >
+          &copy;{new Date().getFullYear()} dmithamo
+        </a>
       </span>
     </div>
   );
