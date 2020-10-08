@@ -7,17 +7,26 @@ import { jsx, css } from '@emotion/core';
 import Header from '../Header';
 import Footer from '../Footer';
 import '../../css/index.css';
-import '../../utils/pace/pace';
-import '../../utils/pace/pace-theme.css';
+// import '../../utils/pace/pace';
+// import '../../utils/pace/pace-theme.css';
 
 export default function DefaultLayout({ children, pageTitle }) {
   return (
     <>
       <Helmet titleTemplate="%s | @dmithamo">
+        <html lnag="en"></html>
         <title>{pageTitle}</title>
         <meta name="description" />
         <script src="../../utils/pace/pace.js"></script>
         <link href="../../utils/pace/theme.css" rel="stylesheet"></link>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>
+        <meta
+          name="description"
+          content="Homepage of Dennis Mithamo, Software Engineer based in Nairobi, Kenya"
+        ></meta>
       </Helmet>
       <div
         className="root-container"

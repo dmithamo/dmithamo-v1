@@ -1,4 +1,4 @@
-/*@jsx jsx */
+/** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/core';
 import DefaultLayout from '../components/layouts/DefaultLayout';
@@ -15,7 +15,7 @@ export default function Contacts() {
           align-items: center;
         `}
       >
-        And here will be a criteria for contacting me
+        And here will be criteria for contacting me
       </span>
     </DefaultLayout>
   );

@@ -1,4 +1,4 @@
-/*@jsx jsx */
+/** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/core';
 import DefaultLayout from '../components/layouts/DefaultLayout';

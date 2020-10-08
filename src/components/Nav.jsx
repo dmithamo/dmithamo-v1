@@ -1,15 +1,15 @@
 /**@jsx jsx */
 
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 const NAV_LINKS = [
   {
-    name: 'about me',
-    path: '/aboutMe',
+    name: 'about',
+    path: '/about',
     isCTA: false,
   },
   {
@@ -22,18 +22,24 @@ const NAV_LINKS = [
     path: '/resume',
     isCTA: false,
   },
-  {
-    name: 'get in touch',
-    path: '/contacts',
-    isCTA: true,
-  },
 ];
 
 export default function Nav() {
   return (
-    <nav css={css``}>
+    <nav
+      css={css`
+        a:hover,
+        a.active {
+          color: var(--darkThemeAccents);
+          border-bottom: 4px solid var(--darkThemeAccents);
+        }
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+      `}
+    >
       {NAV_LINKS.map(link => (
-        <NavItem isCTA={link.isCTA} to={link.path}>
+        <NavItem key={link.path} isCTA={link.isCTA} to={link.path}>
           {link.name}
         </NavItem>
       ))}
@@ -42,7 +48,7 @@ export default function Nav() {
 }
 
 export const NavItem = ({ isCTA, to, children }) => (
-  <StyledNavlink isCTA={isCTA} to={to}>
+  <StyledNavlink activeClassName="active" isCTA={isCTA} to={to}>
     {children}
   </StyledNavlink>
 );
@@ -50,19 +56,7 @@ export const NavItem = ({ isCTA, to, children }) => (
 const StyledNavlink = styled(Link)`
   text-decoration: none;
   color: inherit;
-  margin-right: 1em;
-  border: ${props => (props.isCTA ? '1px solid var(--darkThemeAccents)' : '')};
-  padding: ${props => (props.isCTA ? '0.75em' : '')};
-  border-radius: 3px;
-
-  &:hover {
-    background-color: ${props =>
-      props.isCTA ? 'var(--darkThemeAccents)' : 'none'};
-
-    color: ${props => (props.isCTA ? 'var(--black)' : 'inherit')};
-
-    text-decoration: ${props => (props.isCTA ? 'none' : 'underline')};
-  }
+  padding-bottom: 0.2em;
 `;
 
 NavItem.propTypes = {

@@ -7,14 +7,9 @@ import PropTypes from 'prop-types';
 
 export default function Logo({ showName }) {
   return (
-    <span
-      className="heading"
-      css={css`
-        color: var(--darkThemeAccents);
-      `}
-    >
-      <NavItem to="/">{showName && 'dmithamo'}</NavItem>
-    </span>
+    <NavItem to="/">
+      <h3>{showName && 'dmithamo'}</h3>
+    </NavItem>
   );
 }
 
