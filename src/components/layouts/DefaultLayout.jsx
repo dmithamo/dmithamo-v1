@@ -1,6 +1,6 @@
 /**@jsx jsx */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { jsx, css } from '@emotion/core';
@@ -33,9 +33,12 @@ import {
   );
 })();
 export default function DefaultLayout({ children, pageTitle }) {
-  if (typeof document !== 'undefined' && typeof window !== 'undefined') {
+  // Load pacejs and theme css on component mounted
+  useEffect(() => {
     require('../../../static/pace');
-  }
+    require('../../css/darkTheme.css');
+    // require('../../css/lightTheme.css');
+  }, []);
 
   return (
     <>

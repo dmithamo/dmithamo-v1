@@ -52,15 +52,10 @@
 
 :root {
   /* colors */
-  --black: #000;
-  --lightBlack: #00000050;
+  --black: #24272a;
   --white: #fff;
   --grey: #ccc;
   --red: #ff0000;
-  --themeTextColor: #eeffff;
-  --themeTextColor: var(--grey);
-  --themeBG: #263238;
-  --themeAccentColor: #4ef0e0;
 
   /* fonts */
   --primaryFont: 'Poppins Regular', sans-serif;

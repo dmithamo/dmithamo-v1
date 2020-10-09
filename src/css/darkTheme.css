@@ -1,0 +1,5 @@
+:root {
+  --themeTextColor: var(--grey);
+  --themeBG: #263238;
+  --themeAccentColor: #4ef0e0;
+}

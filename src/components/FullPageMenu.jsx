@@ -22,17 +22,15 @@ export default function FullPageMenu({ onClose }) {
         justify-content: space-between;
         align-items: center;
         padding: 15em 0;
-        background-color: var(--darkThemeBG);
+        background-color: var(--themeBG);
 
         button {
           font-size: 3em;
           padding: 2em;
           width: 100%;
           opacity: 0.5;
-          color: var(--grey) !important;
           :hover {
             opacity: 1;
-            color: var(--white) !important;
           }
         }
 
@@ -59,10 +57,6 @@ export default function FullPageMenu({ onClose }) {
 
             span:last-of-type {
               flex-grow: 1;
-            }
-
-            &:hover {
-              color: var(--darkThemeAccents) !important;
             }
           }
         }
