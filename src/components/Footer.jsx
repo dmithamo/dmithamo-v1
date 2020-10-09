@@ -1,10 +1,8 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/core';
-import { useThemeContext } from '../context/theme';
 
 export default function Footer() {
-  const { themeState } = useThemeContext();
   return (
     <div
       css={css`
@@ -32,7 +30,7 @@ export default function Footer() {
           rel="noreferrer external noopener"
           css={css`
             text-decoration: none;
-            color: ${themeState.themeAccentColor};
+            color: var(--themeAccentColor);
           `}
         >
           &copy;{new Date().getFullYear()} dmithamo

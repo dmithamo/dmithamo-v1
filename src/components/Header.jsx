@@ -8,10 +8,9 @@ import Button from './Button';
 import { navigate } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FullPageMenu from './FullPageMenu';
+import constants from '../utils/config/constants';
 
-export default function Header() {
-  const [showFullPageMenu, setShowFullPageMenu] = useState(false);
-
+export default function Header({ showMenu, onToggleShowMenu }) {
   return (
     <>
       <header
@@ -21,14 +20,14 @@ export default function Header() {
           justify-content: space-between;
           align-items: center;
           width: 100%;
-          box-shadow: var(--modalShadow);
+          box-shadow: ${showMenu ? 'none' : 'var(--modalShadow)'};
           position: relative;
 
           div.toggle-menu {
             display: none;
           }
 
-          @media (max-width: 749px) {
+          @media (max-width: ${constants.smallLaptopBreakPoint}) {
             div.toggle-menu {
               display: inline-block;
             }
@@ -46,10 +45,12 @@ export default function Header() {
           <Button
             category="link"
             onClick={() => {
-              setShowFullPageMenu(!showFullPageMenu);
+              onToggleShowMenu(!showMenu);
             }}
           >
-            <FontAwesomeIcon icon="bars" />
+            <FontAwesomeIcon
+              icon={showMenu ? ['far', 'times-circle'] : 'bars'}
+            />
           </Button>
         </div>
 
@@ -65,10 +66,10 @@ export default function Header() {
           />
         </div>
 
-        {showFullPageMenu && (
+        {showMenu && (
           <FullPageMenu
             onClose={() => {
-              setShowFullPageMenu(false);
+              onToggleShowMenu(false);
             }}
           />
         )}

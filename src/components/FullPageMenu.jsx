@@ -6,15 +6,15 @@ import { Link, navigate } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from './Button';
 import { NAV_LINKS } from './Nav';
-import { useThemeContext } from '../context/theme';
+
 import useClickOutside, {
   useEcapeKeyPress,
 } from '../utils/hooks/useClickOutside';
 import { useRef } from 'react';
+import Logo from './Logo';
+import constants from '../utils/config/constants';
 
 export default function FullPageMenu({ onClose }) {
-  const { themeState } = useThemeContext();
-
   const ref = useRef(null);
   useClickOutside(ref, onClose);
   useEcapeKeyPress(onClose);
@@ -23,39 +23,84 @@ export default function FullPageMenu({ onClose }) {
       ref={ref}
       css={css`
         position: fixed;
-        top: 6vh;
+        padding: 1em 0;
+        top: 0vh;
         right: 0;
-        height: 94vh;
-        width: 100%;
+        height: 100vh;
+        width: 50%;
         z-index: 1001;
 
         display: flex;
+        flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        background-color: ${themeState.themeBG};
-        /* box-shadow: var(--modalShadow); */
 
-        div.link-container {
+        background-color: var(--themeBG);
+        box-shadow: var(--modalShadow);
+
+        @media (max-width: ${constants.smallLaptopBreakPoint}) {
+          width: 65%;
+        }
+
+        button.close-btn {
+          font-size: 1.2em;
+        }
+
+        button.nav-link {
+          width: 75%;
           display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-          padding: 2em;
+          flex-direction: row-reverse;
+          margin: auto;
+          padding: 0.8em 1em;
+          font-size: 0.9em;
+          margin-bottom: 1em;
 
-          a {
-            padding: 1em;
+          svg {
+            font-size: 1em;
+          }
+
+          &:hover {
+            color: var(--themeAccentColor);
+          }
+        }
+
+        button.nav-cta {
+          background-color: var(--themeAccentColor);
+          color: var(--themeBG);
+          &:hover {
+            background-color: var(--themeTextColor);
+            color: var(--black);
           }
         }
       `}
     >
-      <div className="link-container">
+      <>
         {NAV_LINKS.map(link => (
-          <Link key={link.path} to={link.path}>
+          <Button
+            key={link.path}
+            onClick={() => {
+              onClose();
+              navigate(link.path);
+            }}
+            category="link"
+            classes={`nav-link ${link.isCTA ? 'nav-cta' : ''}`}
+          >
             <FontAwesomeIcon icon={link.icon} />
             <span>{link.name}</span>
-          </Link>
+          </Button>
         ))}
-      </div>
+      </>
+
+      <Button
+        category="link"
+        onClick={() => {
+          onClose();
+        }}
+        classes="close-btn"
+        alignCenter
+      >
+        <FontAwesomeIcon icon={['far', 'times-circle']} />
+      </Button>
     </div>
   );
 }
