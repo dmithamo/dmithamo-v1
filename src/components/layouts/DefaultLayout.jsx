@@ -18,6 +18,7 @@ import {
   faFilePdf,
   faInfoCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import '../../../static/pacejs/pace';
 
 // Add font awesome icons here
 (() => {
@@ -59,6 +60,7 @@ export default function DefaultLayout({ children, pageTitle }) {
       >
         <Header />
         <section
+          id="section-main"
           css={css`
             width: 90%;
             margin: 0 auto;
