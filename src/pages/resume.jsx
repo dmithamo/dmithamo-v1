@@ -4,6 +4,8 @@ import { jsx, css } from '@emotion/core';
 import DefaultLayout from '../components/layouts/DefaultLayout';
 import { Document, Page, pdfjs } from 'react-pdf';
 import resumepdf from '../../static/resume.pdf';
+import constants from '../utils/config/constants';
+import { navigate } from 'gatsby';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 export default function Resume() {
@@ -26,6 +28,10 @@ export default function Resume() {
             justify-content: center;
             align-items: center;
             overflow: auto;
+            @media (max-width: ${constants.smallLaptopBreakPoint}) {
+              width: 110%;
+              zoom: 0.65;
+            }
           }
         `}
       >

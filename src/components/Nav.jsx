@@ -46,8 +46,8 @@ export default function Nav() {
   );
 }
 
-export const NavItem = ({ isCTA, to, children }) => (
-  <StyledNavlink activeClassName="active" isCTA={isCTA} to={to}>
+export const NavItem = ({ isCTA, to, children, theme }) => (
+  <StyledNavlink theme={theme} activeClassName="active" isCTA={isCTA} to={to}>
     {children}
   </StyledNavlink>
 );

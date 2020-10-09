@@ -1,6 +1,6 @@
 /**@jsx jsx */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { jsx, css } from '@emotion/core';
@@ -18,6 +18,7 @@ import {
   faFilePdf,
   faInfoCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import constants from '../../utils/config/constants';
 
 // Add font awesome icons here
 (() => {
@@ -37,8 +38,9 @@ export default function DefaultLayout({ children, pageTitle }) {
   useEffect(() => {
     require('../../../static/pace');
     require('../../css/darkTheme.css');
-    // require('../../css/lightTheme.css');
   }, []);
+
+  const [showFullPageMenu, setShowFullPageMenu] = useState(false);
 
   return (
     <>
@@ -60,15 +62,25 @@ export default function DefaultLayout({ children, pageTitle }) {
         css={css`
           min-height: 100vh;
           position: relative;
+          color: var(--themeTextColor);
+          background-color: var(--themeBG);
         `}
       >
-        <Header />
+        <Header
+          showMenu={showFullPageMenu}
+          onToggleShowMenu={setShowFullPageMenu}
+        />
         <section
           id="section-main"
           css={css`
             width: 90%;
             margin: 0 auto;
             padding: 0 1em;
+            @media (max-width: ${constants.smallLaptopBreakPoint}) {
+              width: 99%;
+            }
+            filter: blur(${showFullPageMenu ? '0.2em' : '0'});
+            opacity: ${showFullPageMenu ? '0.75' : '1'};
           `}
         >
           {children}

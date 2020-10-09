@@ -61,7 +61,7 @@ Button.defaultProps = {
 };
 
 const StyledButton = styled.span`
-  width: fit-content;
+  width: 100%;
   button {
     width: 100%;
     display: flex;
@@ -76,7 +76,7 @@ const StyledButton = styled.span`
     cursor: pointer;
 
     svg {
-      font-size: 1.3em;
+      font-size: 1.75em;
     }
   }
 
@@ -86,19 +86,18 @@ const StyledButton = styled.span`
     border: none;
 
     :hover {
-      background-color: var(--themeTextColor);
+      filter: brightness(120%);
     }
   }
 
   button.secondary {
     font-weight: normal;
-    color: var(--black);
-    background-color: var(--grey);
+    color: var(--themeSecondaryTextColor);
+    background-color: var(--themeSecondaryTextColor);
     border: none;
 
     :hover {
-      background-color: var(--black);
-      color: var(--themeAccentColor);
+      filter: brightness(120%);
     }
   }
 

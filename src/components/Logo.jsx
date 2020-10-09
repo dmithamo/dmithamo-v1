@@ -5,9 +5,16 @@ import { jsx, css } from '@emotion/core';
 import { NavItem } from './Nav';
 import PropTypes from 'prop-types';
 
+import { Link } from 'gatsby';
+
 export default function Logo({ showName }) {
   return (
-    <NavItem to="/">
+    <Link
+      css={css`
+        text-decoration: none;
+      `}
+      to="/"
+    >
       <h3
         css={css`
           color: var(--themeTextColor);
@@ -16,7 +23,7 @@ export default function Logo({ showName }) {
       >
         {showName && 'dmithamo'}
       </h3>
-    </NavItem>
+    </Link>
   );
 }
 

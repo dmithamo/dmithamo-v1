@@ -21,7 +21,6 @@ export default function NotFoundPage() {
           css={css`
             color: var(--themeAccentColor);
             border-radius: 5px;
-            padding: 0.5em;
             text-decoration: none;
             &:hover {
               text-decoration: underline;

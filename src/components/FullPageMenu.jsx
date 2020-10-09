@@ -1,90 +1,106 @@
 /** @jsx jsx */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { jsx, css } from '@emotion/core';
-import PropTypes from 'prop-types';
+import PropTypes, { func } from 'prop-types';
 import { Link, navigate } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from './Button';
 import { NAV_LINKS } from './Nav';
 
+import useClickOutside, {
+  useEcapeKeyPress,
+} from '../utils/hooks/useClickOutside';
+import { useRef } from 'react';
+import Logo from './Logo';
+import constants from '../utils/config/constants';
+
 export default function FullPageMenu({ onClose }) {
+  const ref = useRef(null);
+  useClickOutside(ref, onClose);
+  useEcapeKeyPress(onClose);
   return (
     <div
+      ref={ref}
       css={css`
         position: fixed;
-        top: 0;
-        left: 0;
+        padding: 1em 0;
+        top: 0vh;
+        right: 0;
         height: 100vh;
-        width: 100%;
+        width: 50%;
         z-index: 1001;
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15em 0;
-        background-color: var(--themeBG);
 
-        button {
-          font-size: 3em;
-          padding: 2em;
-          width: 100%;
-          opacity: 0.5;
-          :hover {
-            opacity: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        background-color: var(--themeBG);
+        box-shadow: var(--modalShadow);
+
+        @media (max-width: ${constants.smallLaptopBreakPoint}) {
+          width: 65%;
+        }
+
+        button.close-btn {
+          font-size: 1.2em;
+        }
+
+        button.nav-link {
+          width: 75%;
+          display: flex;
+          flex-direction: row-reverse;
+          margin: auto;
+          padding: 0.8em 1em;
+          font-size: 0.9em;
+          margin-bottom: 1em;
+
+          svg {
+            font-size: 1em;
+          }
+
+          &:hover {
+            color: var(--themeAccentColor);
           }
         }
 
-        div.container {
-          width: 300px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-
-          button.nav-link {
-            font-family: var(--primaryFontBold);
-            font-size: 1.5em;
-            margin: 0.5em 0;
-            padding: 0.5em 0;
-            width: 250px;
-            display: flex;
-            justify-content: center !important;
-            align-items: center !important;
-
-            span.icon {
-              width: 20%;
-            }
-
-            span:last-of-type {
-              flex-grow: 1;
-            }
+        button.nav-cta {
+          background-color: var(--themeAccentColor);
+          color: var(--themeBG);
+          &:hover {
+            background-color: var(--themeTextColor);
+            color: var(--black);
           }
         }
       `}
     >
-      <Button classes="close-btn" category="link" onClick={onClose}>
-        <span className="icon">
-          <FontAwesomeIcon icon={['far', 'times-circle']} />
-        </span>
-      </Button>
-      <div className="container">
+      <>
         {NAV_LINKS.map(link => (
           <Button
             key={link.path}
-            classes="nav-link"
-            category="link"
             onClick={() => {
-              navigate(link.path);
               onClose();
+              navigate(link.path);
             }}
+            category="link"
+            classes={`nav-link ${link.isCTA ? 'nav-cta' : ''}`}
           >
-            <span className="icon">
-              <FontAwesomeIcon icon={link.icon} />
-            </span>
+            <FontAwesomeIcon icon={link.icon} />
             <span>{link.name}</span>
           </Button>
         ))}
-      </div>
+      </>
+
+      <Button
+        category="link"
+        onClick={() => {
+          onClose();
+        }}
+        classes="close-btn"
+        alignCenter
+      >
+        <FontAwesomeIcon icon={['far', 'times-circle']} />
+      </Button>
     </div>
   );
 }
