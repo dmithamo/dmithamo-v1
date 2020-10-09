@@ -238,7 +238,7 @@
       window.Pace = j,
       v(j, g.prototype),
       D = j.options = v({}, u, window.paceOptions, x()),
-      U = ['ajax', 'document', 'eventLag', 'elements'],
+      U = ['ajax', 'customDocument', 'eventLag', 'elements'],
       Q = 0,
       S = U.length;
     S > Q;
@@ -749,12 +749,12 @@
       (window.history.replaceState = function () {
         return z(), W.apply(window.history, arguments);
       })),
-    (l = { ajax: a, elements: d, document: c, eventLag: f }),
+    (l = { ajax: a, elements: d, customDocument: c, eventLag: f }),
     (B = function () {
       var a, c, d, e, f, g, h, i;
       for (
         j.sources = L = [],
-          g = ['ajax', 'elements', 'document', 'eventLag'],
+          g = ['ajax', 'elements', 'customDocument', 'eventLag'],
           c = 0,
           e = g.length;
         e > c;

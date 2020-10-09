@@ -18,7 +18,6 @@ import {
   faFilePdf,
   faInfoCircle,
 } from '@fortawesome/free-solid-svg-icons';
-import '../../../static/pacejs/pace';
 
 // Add font awesome icons here
 (() => {
@@ -34,21 +33,23 @@ import '../../../static/pacejs/pace';
   );
 })();
 export default function DefaultLayout({ children, pageTitle }) {
+  if (typeof document !== 'undefined' && typeof window !== 'undefined') {
+    require('../../../static/pace');
+  }
+
   return (
     <>
       <Helmet titleTemplate="%s | @dmithamo">
         <html lang="en"></html>
         <title>{pageTitle}</title>
         <meta name="description" />
-        <script src="../../utils/pace/pace.js"></script>
-        <link href="../../utils/pace/theme.css" rel="stylesheet"></link>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
         ></meta>
         <meta
           name="description"
-          content="Homepage of Dennis Mithamo, Software Engineer based in Nairobi, Kenya"
+          content="Homepage of Dennis Mithamo, a made-in-Kenya Software Engineer"
         ></meta>
       </Helmet>
       <div
