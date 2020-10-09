@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
+import { useThemeContext } from '../context/theme';
 
 export default function Button({
   children,
@@ -15,8 +16,10 @@ export default function Button({
   alignCenter,
   classes,
 }) {
+  const { themeState } = useThemeContext();
+
   return (
-    <StyledButton>
+    <StyledButton theme={themeState}>
       <button
         title={title}
         className={`${classes} ${category} ${disabled ? 'disabled' : ''}`}
@@ -27,6 +30,7 @@ export default function Button({
         style={{
           justifyContent: `${alignCenter ? 'center' : 'space-between'}`,
         }}
+        theme={themeState}
       >
         {value || children}
       </button>
@@ -81,24 +85,23 @@ const StyledButton = styled.span`
   }
 
   button.primary {
-    color: var(--themeBG);
-    background-color: var(--themeAccentColor);
+    color: ${props => props.theme.themeBG};
+    background-color: ${props => props.theme.themeAccentColor};
     border: none;
 
     :hover {
-      background-color: var(--themeTextColor);
+      filter: brightness(120%);
     }
   }
 
   button.secondary {
     font-weight: normal;
-    color: var(--black);
-    background-color: var(--grey);
+    color: ${props => props.theme.themeSecondaryTextColor};
+    background-color: ${props => props.theme.themeSecondaryTextColor};
     border: none;
 
     :hover {
-      background-color: var(--black);
-      color: var(--themeAccentColor);
+      filter: brightness(120%);
     }
   }
 
@@ -109,7 +112,7 @@ const StyledButton = styled.span`
 
     :hover {
       background-color: var(--black);
-      color: var(--themeAccentColor);
+      color: ${props => props.theme.themeAccentColor};
       border: 1px solid var(--black);
     }
   }
@@ -128,11 +131,11 @@ const StyledButton = styled.span`
   button.link {
     padding: 0;
     background: none;
-    color: var(--themeTextColor);
+    color: ${props => props.theme.themeTextColor};
     border: none;
 
     :hover {
-      color: var(--themeAccentColor);
+      color: ${props => props.theme.themeAccentColor};
       font-weight: bold;
     }
   }

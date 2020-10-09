@@ -18,6 +18,7 @@ import {
   faFilePdf,
   faInfoCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import { useThemeContext } from '../../context/theme';
 
 // Add font awesome icons here
 (() => {
@@ -36,10 +37,9 @@ export default function DefaultLayout({ children, pageTitle }) {
   // Load pacejs and theme css on component mounted
   useEffect(() => {
     require('../../../static/pace');
-    require('../../css/darkTheme.css');
-    // require('../../css/lightTheme.css');
   }, []);
 
+  const { themeState } = useThemeContext();
   return (
     <>
       <Helmet titleTemplate="%s | @dmithamo">
@@ -60,6 +60,8 @@ export default function DefaultLayout({ children, pageTitle }) {
         css={css`
           min-height: 100vh;
           position: relative;
+          color: ${themeState.themeTextColor};
+          background-color: ${themeState.themeBG};
         `}
       >
         <Header />
@@ -69,6 +71,9 @@ export default function DefaultLayout({ children, pageTitle }) {
             width: 90%;
             margin: 0 auto;
             padding: 0 1em;
+            @media (max-width: 749px) {
+              width: 99%;
+            }
           `}
         >
           {children}

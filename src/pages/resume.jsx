@@ -26,6 +26,10 @@ export default function Resume() {
             justify-content: center;
             align-items: center;
             overflow: auto;
+            @media (max-width: 749px) {
+              width: 110%;
+              zoom: 0.65;
+            }
           }
         `}
       >
