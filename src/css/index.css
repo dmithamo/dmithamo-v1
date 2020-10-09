@@ -1,21 +1,25 @@
 @font-face {
   font-family: 'Poppins Very Bold';
   src: url('./fonts/Poppins-Black.ttf') format('opentype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Poppins Bold';
   src: url('./fonts/Poppins-Bold.ttf') format('opentype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Poppins Regular';
   src: url('./fonts/Poppins-Regular.ttf') format('opentype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Poppins Thin';
   src: url('./fonts/Poppins-Thin.ttf') format('opentype');
+  font-display: swap;
 }
 
 /* ------------------------------------------------------- */
@@ -34,7 +38,7 @@
 }
 
 .pace .pace-progress {
-  background: var(--darkThemeAccents);
+  background: var(--themeAccentColor);
   position: fixed;
   z-index: 2000;
   top: 0;
@@ -43,7 +47,7 @@
   height: 1px;
 }
 
-/* LAODER CSS ENDS */
+/* PACE JS LOADER CSS ENDS */
 /* ------------------------------------------------------- */
 
 :root {
@@ -53,14 +57,10 @@
   --white: #fff;
   --grey: #ccc;
   --red: #ff0000;
-  --darkThemeText: #eeffff;
-  --darkThemeText: var(--grey);
-  --darkThemeBG: #263238;
-  --darkThemeAccents: #4ef0e0;
-  /* --darkThemeAccents: #3fc4ff; */
-  --lightThemeText: #000000;
-  --lightThemeBG: #fcfaf9;
-  --lightThemeAccents: rgb(2, 182, 32);
+  --themeTextColor: #eeffff;
+  --themeTextColor: var(--grey);
+  --themeBG: #263238;
+  --themeAccentColor: #4ef0e0;
 
   /* fonts */
   --primaryFont: 'Poppins Regular', sans-serif;
@@ -74,8 +74,8 @@
 
 body {
   font-family: var(--primaryFont);
-  background-color: var(--darkThemeBG);
-  color: var(--darkThemeText);
+  background-color: var(--themeBG);
+  color: var(--themeTextColor);
   margin: 0;
   width: 100%;
 }
