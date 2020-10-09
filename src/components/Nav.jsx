@@ -25,8 +25,8 @@ export default function Nav() {
       css={css`
         a:hover,
         a.active {
-          color: var(--darkThemeAccents);
-          border-bottom: 4px solid var(--darkThemeAccents);
+          color: var(--themeAccentColor);
+          border-bottom: 4px solid var(--themeAccentColor);
         }
         width: 20%;
         display: flex;
@@ -56,7 +56,7 @@ const StyledNavlink = styled(Link)`
   text-decoration: none;
   color: inherit;
   padding-bottom: 0.2em;
-  border-bottom: 4px solid var(--darkThemeBG);
+  border-bottom: 4px solid var(--themeBG);
 `;
 
 NavItem.propTypes = {

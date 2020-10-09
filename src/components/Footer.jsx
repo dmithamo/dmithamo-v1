@@ -30,7 +30,7 @@ export default function Footer() {
           rel="noreferrer external noopener"
           css={css`
             text-decoration: none;
-            color: var(--darkThemeAccents);
+            color: var(--themeAccentColor);
           `}
         >
           &copy;{new Date().getFullYear()} dmithamo

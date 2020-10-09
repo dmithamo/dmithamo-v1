@@ -10,7 +10,7 @@ export default function Logo({ showName }) {
     <NavItem to="/">
       <h3
         css={css`
-          color: var(--white);
+          color: var(--themeTextColor);
           font-family: var(--primaryBold);
         `}
       >

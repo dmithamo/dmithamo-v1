@@ -81,12 +81,12 @@ const StyledButton = styled.span`
   }
 
   button.primary {
-    color: var(--black);
-    background-color: var(--darkThemeAccents);
+    color: var(--themeBG);
+    background-color: var(--themeAccentColor);
     border: none;
 
     :hover {
-      background-color: var(--white);
+      background-color: var(--themeTextColor);
     }
   }
 
@@ -98,7 +98,7 @@ const StyledButton = styled.span`
 
     :hover {
       background-color: var(--black);
-      color: var(--darkThemeAccents);
+      color: var(--themeAccentColor);
     }
   }
 
@@ -109,7 +109,7 @@ const StyledButton = styled.span`
 
     :hover {
       background-color: var(--black);
-      color: var(--darkThemeAccents);
+      color: var(--themeAccentColor);
       border: 1px solid var(--black);
     }
   }
@@ -128,11 +128,11 @@ const StyledButton = styled.span`
   button.link {
     padding: 0;
     background: none;
-    color: var(--darkThemeAccents);
+    color: var(--themeTextColor);
     border: none;
 
     :hover {
-      color: var(--white);
+      color: var(--themeAccentColor);
       font-weight: bold;
     }
   }

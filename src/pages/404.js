@@ -19,7 +19,7 @@ export default function NotFoundPage() {
         You must be lost.&nbsp;
         <Link
           css={css`
-            color: var(--darkThemeAccents);
+            color: var(--themeAccentColor);
             border-radius: 5px;
             padding: 0.5em;
             text-decoration: none;
