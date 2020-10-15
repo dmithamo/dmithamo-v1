@@ -1,24 +1,24 @@
 @font-face {
-  font-family: 'Poppins Very Bold';
-  src: url('./fonts/Poppins-Black.ttf') format('opentype');
+  font-family: 'IBM Plex Bold';
+  src: url('./fonts/IBMPlexSans-Bold.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins Bold';
-  src: url('./fonts/Poppins-Bold.ttf') format('opentype');
+  font-family: 'IBM Plex Medium';
+  src: url('./fonts/IBMPlexSans-Medium.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins Regular';
-  src: url('./fonts/Poppins-Regular.ttf') format('opentype');
+  font-family: 'IBM Plex Regular';
+  src: url('./fonts/IBMPlexSans-Regular.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins Thin';
-  src: url('./fonts/Poppins-Thin.ttf') format('opentype');
+  font-family: 'IBM Plex Thin';
+  src: url('./fonts/IBMPlexSans-Thin.otf') format('opentype');
   font-display: swap;
 }
 
@@ -53,15 +53,20 @@
 :root {
   /* colors */
   --black: #24272a;
+  --trueBlack: #000;
+  --linkedInBlue: #0e76a8;
+  --gmailRed: #db4a39;
+  --locationYellow: #ffff00;
   --white: #fff;
+  --offWhite: rgb(209, 209, 209);
   --grey: #ccc;
   --red: #ff0000;
 
   /* fonts */
-  --primaryFont: 'Poppins Regular', sans-serif;
-  --primaryFontThin: 'Poppins Thin', sans-serif;
-  --primaryFontBold: 'Poppins Bold', sans-serif;
-  --primaryFontVeryBold: 'Poppins Very Bold', sans-serif;
+  --primaryFontBold: 'IBM Plex Bold', sans-serif;
+  --primaryFontMedium: 'IBM Plex Medium', sans-serif;
+  --primaryFont: 'IBM Plex Regular', sans-serif;
+  --primaryFontThin: 'IBM Plex Thin', sans-serif;
 
   /* shadows */
   --modalShadow: 0 0 2px 2px #00000030;
@@ -71,11 +76,13 @@ body {
   font-family: var(--primaryFont);
   margin: 0;
   width: 100%;
+  font-size: 12px;
 }
 
 * {
   box-sizing: border-box !important;
   font-family: var(--primaryFont);
+  transition: all ease-in-out 0.15s !important;
 }
 
 img {

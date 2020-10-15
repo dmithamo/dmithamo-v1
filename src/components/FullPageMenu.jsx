@@ -52,7 +52,7 @@ export default function FullPageMenu({ onClose }) {
           flex-direction: row-reverse;
           margin: auto;
           padding: 0.8em 1em;
-          font-size: 0.9em;
+          font-size: 1.1em;
           margin-bottom: 1em;
 
           svg {
