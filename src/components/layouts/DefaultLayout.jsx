@@ -9,7 +9,11 @@ import Footer from '../Footer';
 import '../../css/index.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
+import {
+  fab,
+  faGooglePlus,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
 import {
   faBars,
   faHome,
@@ -17,6 +21,8 @@ import {
   faAddressCard,
   faFilePdf,
   faInfoCircle,
+  faLocationArrow,
+  faMapMarkerAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import constants from '../../utils/config/constants';
 
@@ -30,7 +36,10 @@ import constants from '../../utils/config/constants';
     faCodeBranch,
     faAddressCard,
     faInfoCircle,
-    faFilePdf
+    faFilePdf,
+    faLinkedin,
+    faGooglePlus,
+    faMapMarkerAlt
   );
 })();
 export default function DefaultLayout({ children, pageTitle }) {

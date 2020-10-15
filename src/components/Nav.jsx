@@ -1,7 +1,7 @@
 /**@jsx jsx */
 
 import React from 'react';
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
@@ -13,9 +13,9 @@ export const NAV_LINKS = [
   { path: '/resume', name: 'resume`', icon: 'file-pdf', isCTA: false },
   {
     path: '/contacts',
-    name: 'get in touch',
+    name: 'contacts',
     icon: 'address-card',
-    isCTA: true,
+    isCTA: false,
   },
 ];
 

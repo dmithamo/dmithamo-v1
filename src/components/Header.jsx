@@ -54,18 +54,6 @@ export default function Header({ showMenu, onToggleShowMenu }) {
           </Button>
         </div>
 
-        <div className="cta">
-          <Button
-            classes="cta"
-            value="get in touch"
-            category="primary"
-            onClick={() => {
-              navigate('/contacts');
-            }}
-            alignCenter
-          />
-        </div>
-
         {showMenu && (
           <FullPageMenu
             onClose={() => {

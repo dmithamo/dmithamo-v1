@@ -16,7 +16,7 @@ export default function Button({
   classes,
 }) {
   return (
-    <StyledButton>
+    <StyledButton className="button">
       <button
         title={title}
         className={`${classes} ${category} ${disabled ? 'disabled' : ''}`}
@@ -81,12 +81,13 @@ const StyledButton = styled.span`
   }
 
   button.primary {
-    color: var(--themeBG);
+    background: none;
+    color: var(--black);
+    border: 1px solid var(--themeAccentColor);
     background-color: var(--themeAccentColor);
-    border: none;
 
     :hover {
-      filter: brightness(120%);
+      filter: brightness(110%);
     }
   }
 
@@ -109,7 +110,7 @@ const StyledButton = styled.span`
     :hover {
       background-color: var(--black);
       color: var(--themeAccentColor);
-      border: 1px solid var(--black);
+      border: 1px solid var(--themeAccentColor);
     }
   }
 
@@ -129,6 +130,7 @@ const StyledButton = styled.span`
     background: none;
     color: var(--themeTextColor);
     border: none;
+    text-decoration: underline;
 
     :hover {
       color: var(--themeAccentColor);
