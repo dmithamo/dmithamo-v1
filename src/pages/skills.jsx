@@ -15,7 +15,7 @@ export default function AboutMePage() {
           align-items: center;
         `}
       >
-        And here will be info about me
+        And here will be an emuneration of what I can do
       </span>
     </DefaultLayout>
   );

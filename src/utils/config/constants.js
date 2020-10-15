@@ -1,3 +1,3 @@
 export default {
-  smallLaptopBreakPoint: '749px',
+  smallLaptopBreakPoint: '1150px',
 };

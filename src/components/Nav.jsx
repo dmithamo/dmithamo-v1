@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 export const NAV_LINKS = [
   { path: '/', name: 'home', icon: 'home', isCTA: false },
-  { path: '/about', name: 'about', icon: 'info-circle', isCTA: false },
+  { path: '/skills', name: 'skills', icon: 'info-circle', isCTA: false },
   { path: '/projects', name: 'projects', icon: 'code-branch', isCTA: false },
   { path: '/resume', name: 'resume`', icon: 'file-pdf', isCTA: false },
   {
