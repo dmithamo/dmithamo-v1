@@ -5,7 +5,7 @@ import DefaultLayout from '../components/layouts/DefaultLayout';
 
 export default function Projects() {
   return (
-    <DefaultLayout>
+    <DefaultLayout pageTitle="Projects">
       <span
         css={css`
           width: 100%;

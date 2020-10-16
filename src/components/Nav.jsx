@@ -15,8 +15,9 @@ export const NAV_LINKS = [
     icon: 'laptop-code',
     isCTA: false,
   },
-  { path: '/skills', name: 'skills', icon: 'info-circle', isCTA: false },
+  { path: '/skills', name: 'skills', icon: 'cogs', isCTA: false },
   { path: '/resume', name: 'resume`', icon: 'file-pdf', isCTA: false },
+  { path: '/contacts', name: 'contacts', icon: 'address-card', isCTA: false },
   { path: '/projects', name: 'projects', icon: 'code-branch', isCTA: true },
 ];
 
@@ -30,7 +31,7 @@ export default function Nav() {
           color: var(--themeAccentColor);
           border-bottom: 4px solid var(--themeAccentColor);
         }
-        width: 20%;
+        width: 30%;
         display: flex;
         justify-content: space-between;
         align-items: center;

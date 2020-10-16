@@ -24,6 +24,7 @@ import {
   faMapMarkerAlt,
   faLaptopCode,
   faInbox,
+  faCogs,
 } from '@fortawesome/free-solid-svg-icons';
 import constants from '../../utils/config/constants';
 
@@ -42,7 +43,8 @@ import constants from '../../utils/config/constants';
     faGooglePlus,
     faMapMarkerAlt,
     faLaptopCode,
-    faInbox
+    faInbox,
+    faCogs
   );
 })();
 export default function DefaultLayout({ children, pageTitle }) {

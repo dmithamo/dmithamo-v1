@@ -14,7 +14,7 @@ export default function Resume() {
   function onError(error) {}
 
   return (
-    <DefaultLayout>
+    <DefaultLayout pageTitle="Resume`">
       <span
         css={css`
           width: 100%;

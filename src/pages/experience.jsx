@@ -5,7 +5,7 @@ import DefaultLayout from '../components/layouts/DefaultLayout';
 
 export default function ExperiencePage() {
   return (
-    <DefaultLayout>
+    <DefaultLayout pageTitle="Experience">
       <span
         css={css`
           width: 100%;

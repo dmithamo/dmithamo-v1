@@ -5,7 +5,7 @@ import DefaultLayout from '../components/layouts/DefaultLayout';
 
 export default function Contacts() {
   return (
-    <DefaultLayout>
+    <DefaultLayout pageTitle="Contacts">
       <span
         css={css`
           width: 100%;

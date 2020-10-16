@@ -5,7 +5,7 @@ import DefaultLayout from '../components/layouts/DefaultLayout';
 
 export default function SkillsPage() {
   return (
-    <DefaultLayout>
+    <DefaultLayout pageTitle="Skillset">
       <span
         css={css`
           width: 100%;
