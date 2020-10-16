@@ -64,7 +64,7 @@ export default function Homepage() {
           `}
         >
           <div
-            className="img"
+            className="img animate-transition-1"
             css={css`
               background-color: var(--trueBlack);
               width: 400px;
@@ -72,6 +72,10 @@ export default function Homepage() {
               transform: rotate(45deg);
               :hover {
                 transform: rotate(0);
+
+                img {
+                  transform: translateX(0) translateY(0);
+                }
               }
             `}
           >
@@ -79,14 +83,10 @@ export default function Homepage() {
               src={myPic}
               alt="Dennis Mithamo"
               css={css`
-                width: 100%;
+                width: 400px;
                 height: auto;
                 transform: translate(20px, 20px);
                 border-radius: 20% 0 20% 20%;
-
-                :hover {
-                  transform: translateX(0) translateY(0);
-                }
               `}
             />
           </div>
@@ -211,7 +211,7 @@ export default function Homepage() {
                   title="Email: dennisbmithamo@gmail.com"
                   className="social-link email"
                 >
-                  <FontAwesomeIcon icon={['fab', 'google-plus']} />
+                  <FontAwesomeIcon icon="inbox" />
                 </a>
                 <a
                   href="https://goo.gl/maps/7YXgDewY5JKTZJiS8"
@@ -223,7 +223,6 @@ export default function Homepage() {
                   <FontAwesomeIcon icon="map-marker-alt" />
                 </a>
               </p>
-              {/* Links to places here */}
 
               <div
                 className="actions"
@@ -241,7 +240,7 @@ export default function Homepage() {
               >
                 <Button
                   onClick={() => {
-                    navigate('/about');
+                    navigate('/experience');
                   }}
                   alignCenter
                   category="outline"

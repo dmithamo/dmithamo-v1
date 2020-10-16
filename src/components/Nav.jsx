@@ -1,25 +1,27 @@
 /**@jsx jsx */
 
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
+import Button from './Button';
 
 export const NAV_LINKS = [
   { path: '/', name: 'home', icon: 'home', isCTA: false },
-  { path: '/skills', name: 'skills', icon: 'info-circle', isCTA: false },
-  { path: '/projects', name: 'projects', icon: 'code-branch', isCTA: false },
-  { path: '/resume', name: 'resume`', icon: 'file-pdf', isCTA: false },
   {
-    path: '/contacts',
-    name: 'contacts',
-    icon: 'address-card',
+    path: '/experience',
+    name: 'experience',
+    icon: 'laptop-code',
     isCTA: false,
   },
+  { path: '/skills', name: 'skills', icon: 'info-circle', isCTA: false },
+  { path: '/resume', name: 'resume`', icon: 'file-pdf', isCTA: false },
+  { path: '/projects', name: 'projects', icon: 'code-branch', isCTA: true },
 ];
 
 export default function Nav() {
+  const navCTA = NAV_LINKS.find(n => n.isCTA);
   return (
     <nav
       css={css`
@@ -31,6 +33,7 @@ export default function Nav() {
         width: 20%;
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         @media (max-width: 1200px) {
           width: 40%;
@@ -42,6 +45,21 @@ export default function Nav() {
           {link.name}
         </NavItem>
       ))}
+      <div
+        className="nav-cta"
+        css={css`
+          width: 150px;
+        `}
+      >
+        <Button
+          alignCenter
+          category="primary"
+          value={navCTA.name}
+          onClick={() => {
+            navigate(navCTA.path);
+          }}
+        />
+      </div>
     </nav>
   );
 }

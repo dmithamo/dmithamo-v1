@@ -21,8 +21,9 @@ import {
   faAddressCard,
   faFilePdf,
   faInfoCircle,
-  faLocationArrow,
   faMapMarkerAlt,
+  faLaptopCode,
+  faInbox,
 } from '@fortawesome/free-solid-svg-icons';
 import constants from '../../utils/config/constants';
 
@@ -39,7 +40,9 @@ import constants from '../../utils/config/constants';
     faFilePdf,
     faLinkedin,
     faGooglePlus,
-    faMapMarkerAlt
+    faMapMarkerAlt,
+    faLaptopCode,
+    faInbox
   );
 })();
 export default function DefaultLayout({ children, pageTitle }) {

@@ -3,7 +3,7 @@ import React from 'react';
 import { jsx, css } from '@emotion/core';
 import DefaultLayout from '../components/layouts/DefaultLayout';
 
-export default function SkillsPage() {
+export default function ExperiencePage() {
   return (
     <DefaultLayout>
       <span
@@ -15,7 +15,8 @@ export default function SkillsPage() {
           align-items: center;
         `}
       >
-        And here will be an emuneration of what I can do
+        And here will be an emuneration of what programming jobs I have held to
+        date
       </span>
     </DefaultLayout>
   );

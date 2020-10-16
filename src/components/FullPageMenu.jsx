@@ -18,6 +18,8 @@ export default function FullPageMenu({ onClose }) {
   const ref = useRef(null);
   useClickOutside(ref, onClose);
   useEcapeKeyPress(onClose);
+
+  const navCTA = NAV_LINKS.find(n => n.isCTA);
   return (
     <div
       ref={ref}
@@ -34,6 +36,7 @@ export default function FullPageMenu({ onClose }) {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        font-size: 1.75em;
 
         background-color: var(--themeBG);
         box-shadow: var(--modalShadow);
@@ -54,6 +57,9 @@ export default function FullPageMenu({ onClose }) {
           padding: 0.8em 1em;
           font-size: 1.1em;
           margin-bottom: 1em;
+          text-decoration: none;
+          border-radius: 0;
+          border-bottom: 1px solid var(--black);
 
           svg {
             font-size: 1em;
@@ -65,17 +71,16 @@ export default function FullPageMenu({ onClose }) {
         }
 
         button.nav-cta {
-          background-color: var(--themeAccentColor);
-          color: var(--themeBG);
+          border-radius: 5px;
+          border: 1px solid var(--themeAccentColor);
           &:hover {
-            background-color: var(--themeTextColor);
-            color: var(--black);
+            color: var(--trueBlack);
           }
         }
       `}
     >
       <>
-        {NAV_LINKS.map(link => (
+        {NAV_LINKS.filter(nav => !nav.isCTA).map(link => (
           <Button
             key={link.path}
             onClick={() => {
@@ -83,12 +88,25 @@ export default function FullPageMenu({ onClose }) {
               navigate(link.path);
             }}
             category="link"
-            classes={`nav-link ${link.isCTA ? 'nav-cta' : ''}`}
+            classes={`nav-link`}
           >
             <FontAwesomeIcon icon={link.icon} />
             <span>{link.name}</span>
           </Button>
         ))}
+
+        <Button
+          key={navCTA.path}
+          onClick={() => {
+            onClose();
+            navigate(navCTA.path);
+          }}
+          category="primary"
+          classes={`nav-link nav-cta`}
+        >
+          <FontAwesomeIcon icon={navCTA.icon} />
+          <span>{navCTA.name}</span>
+        </Button>
       </>
 
       <Button

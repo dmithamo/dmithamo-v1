@@ -67,6 +67,7 @@ const StyledButton = styled.span`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-transform: capitalize;
 
     font-family: inherit;
     padding: 0.85em 1.1em;
@@ -87,7 +88,9 @@ const StyledButton = styled.span`
     background-color: var(--themeAccentColor);
 
     :hover {
-      filter: brightness(110%);
+      color: var(--trueBlack);
+      background-color: var(--white);
+      border: 1px solid var(--trueBlack);
     }
   }
 
