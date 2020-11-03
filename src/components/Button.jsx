@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { jsx, css } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 export default function Button({
   children,
@@ -83,14 +82,12 @@ const StyledButton = styled.span`
 
   button.primary {
     background: none;
-    color: var(--black);
+    color: var(--trueBlack);
     border: 1px solid var(--themeAccentColor);
     background-color: var(--themeAccentColor);
 
     :hover {
-      color: var(--trueBlack);
-      background-color: var(--white);
-      border: 1px solid var(--trueBlack);
+      filter: brightness(125%);
     }
   }
 
@@ -107,13 +104,13 @@ const StyledButton = styled.span`
 
   button.outline {
     background: none;
-    color: var(--white);
-    border: 1px solid var(--white);
+    color: var(--themeTextColor);
+    border: 1px solid var(--themeTextColor);
 
     :hover {
-      background-color: var(--black);
-      color: var(--themeAccentColor);
-      border: 1px solid var(--themeAccentColor);
+      border: 1px solid var(--trueBlack);
+      background-color: var(--trueBlack);
+      color: var(--white);
     }
   }
 

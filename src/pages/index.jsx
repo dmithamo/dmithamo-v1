@@ -1,13 +1,12 @@
 /** @jsx jsx */
 
-import React from 'react';
-import DefaultLayout from '../components/layouts/DefaultLayout';
-import { jsx, css } from '@emotion/core';
-import Button from '../components/Button';
-import constants from '../utils/config/constants';
+import { css, jsx } from '@emotion/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { navigate } from 'gatsby';
 import myPic from '../assets/myPic.jpg';
+import Button from '../components/Button';
+import DefaultLayout from '../components/layouts/DefaultLayout';
+import constants from '../utils/config/constants';
 
 export default function Homepage() {
   return (
@@ -98,7 +97,7 @@ export default function Homepage() {
               flex-direction: column;
               align-items: flex-start;
               justify-content: space-evenly;
-              color: var(--offWhite) !important;
+              color: var(--themeTextColor) !important;
             `}
           >
             <div className="name-plus">
@@ -117,7 +116,7 @@ export default function Homepage() {
                   font-family: var(--primaryFontBold);
                   font-size: 4em;
                   margin: 0;
-                  color: var(--white);
+                  color: var(--trueBlack);
                 `}
               >
                 Dennis Mithamo
@@ -164,7 +163,7 @@ export default function Homepage() {
                   }
 
                   a.github {
-                    color: var(--white);
+                    color: var(--themeTextColor);
                   }
 
                   a.linkedin {
@@ -176,7 +175,7 @@ export default function Homepage() {
                   }
 
                   a.home {
-                    color: var(--locationYellow);
+                    color: var(--themeTextColor);
                   }
 
                   a.social-link {

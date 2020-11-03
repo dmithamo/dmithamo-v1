@@ -1,32 +1,32 @@
 /**@jsx jsx */
 
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { jsx, css } from '@emotion/core';
-import Header from '../Header';
-import Footer from '../Footer';
-import '../../css/index.css';
+import { css, jsx } from '@emotion/core';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 import {
   fab,
   faGooglePlus,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
+import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 import {
-  faBars,
-  faHome,
-  faCodeBranch,
   faAddressCard,
-  faFilePdf,
-  faInfoCircle,
-  faMapMarkerAlt,
-  faLaptopCode,
-  faInbox,
+  faBars,
+  faCodeBranch,
   faCogs,
+  faFilePdf,
+  faHome,
+  faInbox,
+  faInfoCircle,
+  faLaptopCode,
+  faMapMarkerAlt,
 } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import '../../css/index.css';
 import constants from '../../utils/config/constants';
+import Footer from '../Footer';
+import Header from '../Header';
 
 // Add font awesome icons here
 (() => {
@@ -49,12 +49,13 @@ import constants from '../../utils/config/constants';
 })();
 export default function DefaultLayout({ children, pageTitle }) {
   // Load pacejs and theme css on component mounted
-  useEffect(() => {
+  React.useEffect(() => {
     require('../../../static/pace');
     require('../../css/darkTheme.css');
+    require('../../css/lightTheme.css');
   }, []);
 
-  const [showFullPageMenu, setShowFullPageMenu] = useState(false);
+  const [showFullPageMenu, setShowFullPageMenu] = React.useState(false);
 
   return (
     <>

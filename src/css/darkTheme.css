@@ -1,5 +1,5 @@
 :root {
-  --themeTextColor: #ccc;
+  --themeTextColor: rgb(255, 255, 255);
   --themeSecondaryTextColor: #cccccc80;
   --themeBG: #263238;
   --themeDarker: #1e2f38;
