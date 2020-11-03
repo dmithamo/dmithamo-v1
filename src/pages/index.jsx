@@ -1,13 +1,12 @@
 /** @jsx jsx */
 
-import React from 'react';
-import DefaultLayout from '../components/layouts/DefaultLayout';
-import { jsx, css } from '@emotion/core';
-import Button from '../components/Button';
-import constants from '../utils/config/constants';
+import { css, jsx } from '@emotion/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { navigate } from 'gatsby';
 import myPic from '../assets/myPic.jpg';
+import Button from '../components/Button';
+import DefaultLayout from '../components/layouts/DefaultLayout';
+import constants from '../utils/config/constants';
 
 export default function Homepage() {
   return (
@@ -19,6 +18,7 @@ export default function Homepage() {
           width: 90%;
 
           @media (max-width: ${constants.smallLaptopBreakPoint}) {
+            width: 100%;
           }
         `}
       >
@@ -36,10 +36,11 @@ export default function Homepage() {
               flex-direction: column;
 
               div.img {
-                width: 250px;
-                border-radius: 20% 20% 0 20%;
+                width: 150px;
+                border-radius: 10% 20% 0 10%;
                 img {
-                  border-radius: 20% 20% 0 20%;
+                  transform: rotate(0) translateX(10px) translateY(10px);
+                  border-radius: 10% 10% 0 10%;
                 }
               }
 
@@ -98,7 +99,7 @@ export default function Homepage() {
               flex-direction: column;
               align-items: flex-start;
               justify-content: space-evenly;
-              color: var(--offWhite) !important;
+              color: var(--themeTextColor) !important;
             `}
           >
             <div className="name-plus">
@@ -110,18 +111,20 @@ export default function Homepage() {
               >
                 Hi, my name is
               </p>
-              <h2
+              <h1
                 className="name"
                 css={css`
-                  font-weight: bold;
                   font-family: var(--primaryFontBold);
                   font-size: 4em;
                   margin: 0;
                   color: var(--white);
+                  @media (max-width: ${constants.smallLaptopBreakPoint}) {
+                    font-size: 3em;
+                  }
                 `}
               >
                 Dennis Mithamo
-              </h2>
+              </h1>
               <h2
                 className="subtitle"
                 css={css`
@@ -164,7 +167,7 @@ export default function Homepage() {
                   }
 
                   a.github {
-                    color: var(--white);
+                    color: var(--themeTextColor);
                   }
 
                   a.linkedin {
@@ -176,7 +179,7 @@ export default function Homepage() {
                   }
 
                   a.home {
-                    color: var(--locationYellow);
+                    color: var(--themeTextColor);
                   }
 
                   a.social-link {

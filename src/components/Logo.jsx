@@ -1,28 +1,28 @@
 /** @jsx jsx */
 
-import React from 'react';
-import { jsx, css } from '@emotion/core';
-import { NavItem } from './Nav';
-import PropTypes from 'prop-types';
-
+import { css, jsx } from '@emotion/core';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 export default function Logo({ showName }) {
   return (
     <Link
       css={css`
         text-decoration: none;
+        color: var(--themeTextColor);
       `}
       to="/"
     >
-      <h3
-        css={css`
-          color: var(--themeTextColor);
-          font-family: var(--primaryBold);
-        `}
-      >
-        {showName && 'dmithamo'}
-      </h3>
+      {showName && (
+        <h3
+          css={css`
+            font-family: var(--primaryFontBold);
+            font-size: 1.25em;
+          `}
+        >
+          dmithamo&trade;
+        </h3>
+      )}
     </Link>
   );
 }

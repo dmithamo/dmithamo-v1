@@ -1,11 +1,9 @@
 /** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/core';
-import DefaultLayout from '../components/layouts/DefaultLayout';
+import { css, jsx } from '@emotion/core';
 import { Document, Page, pdfjs } from 'react-pdf';
 import resumepdf from '../../static/resume.pdf';
+import DefaultLayout from '../components/layouts/DefaultLayout';
 import constants from '../utils/config/constants';
-import { navigate } from 'gatsby';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 export default function Resume() {
@@ -23,7 +21,9 @@ export default function Resume() {
           align-items: center;
 
           .resume-pdf {
-            width: 80%;
+            margin-top: 2em;
+            width: fit-content;
+            height: fit-content;
             display: flex;
             justify-content: center;
             align-items: center;

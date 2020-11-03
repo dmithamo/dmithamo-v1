@@ -73,6 +73,8 @@ export default function FullPageMenu({ onClose }) {
         button.nav-cta {
           border-radius: 5px;
           border: 1px solid var(--themeAccentColor);
+          padding: 0.45em 0.75em;
+
           &:hover {
             color: var(--trueBlack);
           }

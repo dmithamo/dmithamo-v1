@@ -1,9 +1,8 @@
 /**@jsx jsx */
 
-import React from 'react';
-import { Link, navigate } from 'gatsby';
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
+import { Link, navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 import Button from './Button';
 
@@ -15,7 +14,7 @@ export const NAV_LINKS = [
     icon: 'laptop-code',
     isCTA: false,
   },
-  { path: '/skills', name: 'skills', icon: 'cogs', isCTA: false },
+  // { path: '/skills', name: 'skills', icon: 'cogs', isCTA: false },
   { path: '/resume', name: 'resume`', icon: 'file-pdf', isCTA: false },
   { path: '/contacts', name: 'contacts', icon: 'address-card', isCTA: false },
   { path: '/projects', name: 'projects', icon: 'code-branch', isCTA: true },
@@ -28,7 +27,7 @@ export default function Nav() {
       css={css`
         a:hover,
         a.active {
-          color: var(--themeAccentColor);
+          color: var(--white);
           border-bottom: 4px solid var(--themeAccentColor);
         }
         width: 30%;

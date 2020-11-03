@@ -1,6 +1,5 @@
-import React from 'react';
 /**@jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import { Link } from 'gatsby';
 import DefaultLayout from '../components/layouts/DefaultLayout';
 
@@ -19,11 +18,15 @@ export default function NotFoundPage() {
         You must be lost.&nbsp;
         <Link
           css={css`
-            color: var(--themeAccentColor);
-            border-radius: 5px;
+            font-family: var(--primaryFontBold);
+            color: var(--offWhite);
+            background-color: var(--trueBlack);
+            padding: 0.8em 1.5em;
+            border-radius: 15px;
             text-decoration: none;
             &:hover {
-              text-decoration: underline;
+              filter: brightness(112%);
+              color: var(--white);
             }
           `}
           to="/"
