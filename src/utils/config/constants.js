@@ -4,16 +4,17 @@ export default {
 
 export const jobsHeld = [
   {
-    title: 'Frontend Engineer',
+    title: 'Frontend Developer',
     company: 'Proto Energy',
     website: 'https://protoenergy.com',
     period: 'Nov 2020 - Present',
     description:
-      'I collaborate with the UI/UX team in building cool and intutive UIs for diverse internal and customer-facing tools',
+      'My teammates and I (the UI/UX team) design and develop cool and intutive UIs for diverse internal and customer-facing tools',
     roles: [
-      'I write performant,testable and maintainable code, primarily in React, with Redux for state management',
-      'I document internal and customer-facing tools to facilitate training on usage as well as maintenance',
-      'I mentor junior devs on the team towards helping building a wholly equipped engineering team',
+      'I write performant, testable and maintainable code, primarily in React, with Redux for state management',
+      'I help design UIs for internal and customer-facing applications',
+      'I document internal and customer-facing tools to facilitate stakeholder training on usage, as well as future developemnt and maintenance',
+      'I mentor junior devs on the team towards helping build a truly capable and cohesive engineering team',
       '...(I am sure there will be more here)',
     ],
     techstack: [

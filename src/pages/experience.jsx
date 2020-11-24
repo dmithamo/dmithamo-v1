@@ -42,6 +42,7 @@ export default function ExperiencePage() {
                 align-items: flex-start;
                 box-shadow: var(--modalShadow);
                 margin-top: 5vh;
+                margin-bottom: 5vh;
                 color: var(--lightThemeTextColor);
               `}
               key={company}
