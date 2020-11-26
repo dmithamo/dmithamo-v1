@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
-import uniquieID from 'lodash/uniqueId';
+import uniqueId from 'lodash/uniqueId';
 import DefaultLayout from '../components/layouts/DefaultLayout';
+import TechstackCard from '../components/TechstackCard';
 import constants, { jobsHeld } from '../utils/config/constants';
 
 export default function ExperiencePage() {
@@ -104,22 +105,7 @@ export default function ExperiencePage() {
                 `}
               >
                 {techstack.map(tech => (
-                  <span
-                    css={css`
-                      background-color: var(--grey);
-                      color: var(--black);
-                      padding: 0.5em;
-                      font-family: var(--primaryFontItalic);
-                      font-weight: bolder;
-                      display: flex;
-                      justify-content: center;
-                      margin: 1em 0.5em;
-                      border-radius: 5px;
-                    `}
-                    key={uniquieID()}
-                  >
-                    {tech}
-                  </span>
+                  <TechstackCard key={uniqueId()}>{tech}</TechstackCard>
                 ))}
               </p>
             </div>

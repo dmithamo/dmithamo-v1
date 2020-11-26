@@ -1,3 +1,7 @@
+import placeholderScreen from '../../assets/temp-screenshot.png';
+import budget from '../../assets/the-budget.png';
+import timeline from '../../assets/the-timeline.png';
+
 export default {
   smallLaptopBreakPoint: '1150px',
 };
@@ -79,37 +83,12 @@ export const jobsHeld = [
 
 export const projectsOnCourse = [
   {
-    title: 'The Timeline',
-    description:
-      "A web app designed to visualize a user's growth by reading their Git(Hub,Lab...) profile(s)",
-    website: 'https://the-timeline.netlify.app',
-    repo: 'https://github.com/dmithamo/the-timeline',
-    screenshot: '',
-    techtack: [
-      'javascript',
-      'typescript',
-      'reactjs',
-      'redux',
-      'html/css',
-      'styled-components',
-    ],
-  },
-  {
-    title: 'The Timeline (API)',
-    description:
-      "The API for a web app designed to visualize a user's growth by reading their Git(Hub,Lab...) profile(s)",
-    website: '',
-    repo: 'https://github.com/dmithamo/timelineapi',
-    screenshot: '',
-    techtack: ['go'],
-  },
-  {
     title: 'The Budget',
     description:
       "A native application designed to manage a user's expenses and budgets",
     website: '',
     repo: 'https://github.com/dmithamo/thebudget',
-    screenshot: '',
+    screenshot: budget,
     techtack: [
       'javascript',
       'react-native',
@@ -119,27 +98,39 @@ export const projectsOnCourse = [
     ],
   },
   {
-    title: 'The Budget',
+    title: 'The Timeline',
     description:
-      "A native application designed to manage a user's expenses and budgets",
-    website: '',
-    repo: 'https://github.com/dmithamo/the-budget',
-    screenshot: '',
+      "A web app designed to visualize a user's growth by reading their Git(Hub, Lab...) profile(s)",
+    website: 'https://the-timeline.netlify.app',
+    repo: 'https://github.com/dmithamo/the-timeline',
+    screenshot: timeline,
     techtack: [
       'javascript',
+      'typescript',
       'reactjs',
       'redux',
       'html/css',
       'styled-components',
     ],
   },
+
+  {
+    title: 'The Timeline (API)',
+    description:
+      "The API for a web app designed to visualize a user's growth by reading their Git(Hub,Lab...) profile(s)",
+    website: '',
+    repo: 'https://github.com/dmithamo/timelineapi',
+    screenshot: placeholderScreen,
+    techtack: ['go'],
+  },
+
   {
     title: 'GitHub Stats',
     description:
       "A web app designed to offer an in-a-nutshell overview of a dev's profile on GitHub.",
     website: '',
     repo: 'https://github.com/dmithamo/github-stats',
-    screenshot: '',
+    screenshot: placeholderScreen,
     techtack: [
       'javascript',
       'react-native',
