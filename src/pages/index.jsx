@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /** @jsx jsx */
 
 import { css, jsx } from '@emotion/core';
@@ -31,6 +32,7 @@ export default function Homepage() {
             height: 90vh;
             margin: auto;
             font-size: 1.2em;
+            width: 100%;
 
             @media (max-width: ${constants.smallLaptopBreakPoint}) {
               flex-direction: column;
@@ -46,6 +48,7 @@ export default function Homepage() {
 
               div.details {
                 width: 100%;
+                display: flex;
                 align-items: center;
                 justify-content: center;
                 padding: 0.5em;
@@ -70,14 +73,14 @@ export default function Homepage() {
               background-color: var(--trueBlack);
               width: 400px;
               border-radius: 20% 0 20% 20%;
-              transform: rotate(45deg);
-              :hover {
+              /* transform: rotate(45deg); */
+              /* :hover {
                 transform: rotate(0);
 
                 img {
                   transform: translateX(0) translateY(0);
                 }
-              }
+              } */
             `}
           >
             <img
@@ -145,9 +148,10 @@ export default function Homepage() {
                 `}
               >
                 <span>
-                  I build cool stuff with code for a living and for fun.
+                  I build cool and useful stuff with code for a living and for
+                  fun.
                 </span>
-                <span>I have been at it for just about two years now.</span>
+                <span>I have been at it for close to three years now.</span>
               </p>
 
               <p
@@ -183,9 +187,21 @@ export default function Homepage() {
                   }
 
                   a.social-link {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    margin: 0 0.25em;
                     :hover {
                       color: var(--themeAccentColor);
                     }
+                  }
+
+                  .link-name {
+                    font-size: 0.65em;
+                    text-decoration: none;
+                    color: var(--grey);
                   }
                 `}
               >
@@ -197,6 +213,7 @@ export default function Homepage() {
                   className="social-link github"
                 >
                   <FontAwesomeIcon icon={['fab', 'github']} />
+                  <span className="link-name">dmithamo</span>
                 </a>
                 <a
                   href="https://linkedin.com/in/dennis-mithamo"
@@ -206,6 +223,7 @@ export default function Homepage() {
                   className="social-link linkedin"
                 >
                   <FontAwesomeIcon icon={['fab', 'linkedin']} />
+                  <span className="link-name">dennis-mithamo</span>
                 </a>
                 <a
                   href="mailto:dennisbmithamo@gmail.com"
@@ -215,15 +233,16 @@ export default function Homepage() {
                   className="social-link email"
                 >
                   <FontAwesomeIcon icon="inbox" />
+                  <span className="link-name">dennisbmithamo@gmail.com</span>
                 </a>
                 <a
-                  href="https://goo.gl/maps/7YXgDewY5JKTZJiS8"
-                  target="_blank"
+                  href="#"
                   rel="noreferrer noopener"
                   title="Based in: Nairobi, Kenya"
                   className="social-link home"
                 >
                   <FontAwesomeIcon icon="map-marker-alt" />
+                  <span className="link-name">Nairobi, Kenya</span>
                 </a>
               </p>
 

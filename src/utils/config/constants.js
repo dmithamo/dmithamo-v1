@@ -9,16 +9,17 @@ export const jobsHeld = [
     website: 'https://protoenergy.com',
     period: 'Nov 2020 - Present',
     description:
-      'My teammates and I (the UI/UX team) design and develop cool and intutive UIs for diverse internal and customer-facing tools',
+      'My teammates and I design and develop cool and intuitive UIs for diverse internal and customer-facing web applications',
     roles: [
-      'I write performant, testable and maintainable code, primarily in React, with Redux for state management',
-      'I help design UIs for internal and customer-facing applications',
-      'I document internal and customer-facing tools to facilitate stakeholder training on usage, as well as future developemnt and maintenance',
-      'I mentor junior devs on the team towards helping build a truly capable and cohesive engineering team',
+      'Write performant, testable and maintainable code, primarily in React, with Redux for state management',
+      'Brainstorm designs for internal and customer-facing applications',
+      'Document internal and customer-facing tools to facilitate user training, as well as future development and maintenance',
+      'Mentor junior devs on the team towards helping build a truly capable engineering team',
       '...(I am sure there will be more here)',
     ],
     techstack: [
       'javascript',
+      'typescript',
       'reactjs',
       'redux',
       'jest',
