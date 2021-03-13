@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+import { css, jsx } from '@emotion/react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import resumepdf from '../../static/resume.pdf';
 import DefaultLayout from '../components/layouts/DefaultLayout';

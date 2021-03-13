@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React, { useEffect } from 'react';
-import { jsx, css } from '@emotion/core';
+import { jsx, css } from '@emotion/react';
 import PropTypes, { func } from 'prop-types';
 import { Link, navigate } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
