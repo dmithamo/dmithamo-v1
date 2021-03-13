@@ -1,6 +1,6 @@
 /**@jsx jsx */
 
-import { css, jsx } from '@emotion/core';
+import { css, jsx } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Link, navigate } from 'gatsby';
 import PropTypes from 'prop-types';

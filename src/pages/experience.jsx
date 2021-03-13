@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+import { css, jsx } from '@emotion/react';
 import uniquieID from 'lodash/uniqueId';
 import DefaultLayout from '../components/layouts/DefaultLayout';
 import constants, { jobsHeld } from '../utils/config/constants';
