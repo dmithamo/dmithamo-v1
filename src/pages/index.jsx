@@ -151,7 +151,7 @@ export default function Homepage() {
                   I build cool and useful stuff with code for a living and for
                   fun.
                 </span>
-                <span>I have been at it for close to three years now.</span>
+                <span>I have been at it since 2018</span>
               </p>
 
               <p
